@@ -1,6 +1,7 @@
-from django.conf.urls import url
+from django.urls import path, include
 from . import views
 
 urlpatterns=[
-    url('^$',views.index,name = 'index'),
+    path('',views.index,name = 'index'),
+    path('search/', views.search_profile, name='search'),
 ]
