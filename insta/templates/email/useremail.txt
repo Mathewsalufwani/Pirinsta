@@ -1,0 +1,3 @@
+Hello {{name}}
+
+Welcome to Pirinsta, the Instagram clone that you will enjoy. Feel free to post your photos on here and start gaining a following.
