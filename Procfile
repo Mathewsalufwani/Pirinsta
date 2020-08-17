@@ -1,1 +1,1 @@
-web: gunicorn pirinsta.wsgi --log-file -
+web: gunicorn pirinsta.wsgi --log-file -  
