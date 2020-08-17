@@ -1,0 +1,1 @@
+web: gunicorn pirinsta.wsgi --log-file -
