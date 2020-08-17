@@ -15,8 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import url,include
+from django.contrib.auth import views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'',include('insta.urls'))
+    url(r'',include('insta.urls')),
+    url('accounts/register/', RegistrationView.as_view(success_url='/accounts/login/'), name='django_registration_register'),
+    url('accounts/', include('django.contrib.auth.urls')),
+    url("logout/", auth_views.LogoutView.as_view()),
 ]

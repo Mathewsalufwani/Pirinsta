@@ -1,6 +1,13 @@
-from django.shortcuts import render
-from django.http  import HttpResponse
+from django.shortcuts import render, redirect, get_object_or_404
+from django.http  import HttpResponse, JsonResponse
 from .email import send_welcome_email
+from django.contrib.auth.decorators import login_required
+from .forms import SignUpForm, UpdateUserForm, UpdateUserProfileForm, PostForm, CommentForm
+from django.contrib.auth import login, authenticate
+from .models import Post, Comment, Profile, Follow
+from django.contrib.auth.models import User
+from django.template.loader import render_to_string
+from django.views.generic import RedirectView
 
 # Create your views here.
 def signup(request):
